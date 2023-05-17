@@ -1,0 +1,45 @@
+Test1
+public class Java1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     String searchButton ="/body/div[@id='root']/div[1]/div[1]/div[1]/form[1]/input[2]";
+     String errorMsg="//div[@class='alert alert-light']";
+     
+   driver.get("https://technosoftgithubfinder.netlify.app/");
+   driver.click(searchButton);
+   driver.switchto.Alert();
+   Assert.assertequal(errorMsg.gettext(),"Please enter something");
+   
+}
+
+Test2
+public class Java2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     String searchButton ="/body/div[@id='root']/div[1]/div[1]/div[1]/form[1]/input[2]";
+     String errorMsg="//div[@class='alert alert-light']";
+     String searchBox="//body/div[@id='root']/div[1]/div[1]/div[1]/form[1]/input[2]";
+     String postmanLabMoreBotton="//body/div[@id='root']/div[1]/div[1]/div[2]/div[2]/div[1]/a[1]";
+     String followers="//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]".getext();
+     String following="//body/div[@id='root']/div[1]/div[1]/div[2]/div[2]".getext();
+     String publicRepos="//body/div[@id='root']/div[1]/div[1]/div[2]/div[3]".getext();
+     String publicGists="//body/div[@id='root']/div[1]/div[1]/div[2]/div[4]".getext();
+     
+   driver.get("https://technosoftgithubfinder.netlify.app/");
+   driver.click(searchBox);
+   driver.settext("postman");
+   driver.click(searchButton);
+   driver.click(postmanLabMoreBotton);
+
+   
+   Assert.asserttrue(followers.contains("1310"));
+   Assert.asserttrue(following.contains("0"));
+   Assert.asserttrue(publicRepos.contains("150"));
+   Assert.asserttrue(publicGists.contains("0"));
+   
+   
+
+   
+}
